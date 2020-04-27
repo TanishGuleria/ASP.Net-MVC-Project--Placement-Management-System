@@ -1,0 +1,46 @@
+﻿@model IEnumerable<PlacementManagement.Models.Student>
+    
+
+@{
+    ViewBag.Title = "Slist";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<Center>
+<h2>List Of Students</h2>
+    </Center>
+<table class="table">
+    <tr>
+        <th>Student ID</th>
+        <th>First Name</th>
+        <th>Middle Name</th>
+        <th>Last Name</th>
+        <th>Father Name</th>
+        <th>Branch Name</th>
+        <th>Year</th>
+        <th>10th %</th>
+        <th>12th %</th>
+        <th>Cgpa*</th>
+        <th>Edit</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.Id</td>
+    <td>@item.FirstName</td>
+    <td>@item.MiddleName</td>
+    <td>@item.LastName</td>
+    <td>@item.FatherName</td>
+    <td>@item.BranchName</td>
+    <td>@item.GraduationYear</td>
+    <td>@item.Class10thMarks</td>
+    <td>@item.Class12thMarks</td>
+    <td>@item.CurrentCgpa</td>
+    <td><button type="button">Edit</button></td>
+</tr>
+            }
+        
+    </table>
+
+
+

@@ -1,0 +1,86 @@
+﻿@model PlacementManagement.Models.Student
+@{
+    ViewBag.Title = "AddDetails";
+    Layout = "~/Views/Shared/user.cshtml";
+}
+
+<center>
+    <h2>Add Personal Details</h2>
+    </center>
+
+    @using (Html.BeginForm("AddDetails", "User"))
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.Id)
+            @Html.TextBoxFor(m => m.Id, new { Type = "number", @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Id)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.FirstName)
+            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.FirstName)
+
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.MiddleName)
+            @Html.TextBoxFor(m => m.MiddleName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.MiddleName)
+
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.LastName)
+            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.LastName)
+
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.FatherName)
+            @Html.TextBoxFor(m => m.FatherName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.FatherName)
+
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.BranchName)
+            @Html.TextBoxFor(m => m.BranchName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.BranchName)
+
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.GraduationYear)
+            @Html.TextBoxFor(m => m.GraduationYear, "{0:yyyy}", new { type = "date", @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.GraduationYear)
+
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Class10thMarks)
+            @Html.TextBoxFor(m => m.Class10thMarks, new { type = "number", @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Class10thMarks)
+
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Class12thMarks)
+            @Html.TextBoxFor(m => m.Class12thMarks, new { type = "number", @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Class12thMarks)
+
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.CurrentCgpa)
+            @Html.TextBoxFor(m => m.CurrentCgpa, new { type = "number", @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.CurrentCgpa)
+
+        </div>
+        <button type="submit" value="submit" class="btn btn-primary" style="        margin-top: 25px;
+        background-color: #222;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 25px;">
+            Submit
+        </button>
+
+    }

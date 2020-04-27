@@ -1,0 +1,49 @@
+﻿@model IEnumerable<PlacementManagement.Models.Companies>
+
+@{
+    ViewBag.Title = "Companies";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <center>
+
+        <button type="button" style="        margin-top: 25px;
+        background-color: #222;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 25px;" onclick="window.location.href='https://localhost:44359/Admin/AddCompany' ;">
+            Add Companies
+        </button><br>
+        <h2>Companies</h2>
+    </center>
+
+    <table class="table">
+        <tr>
+            <th>Company ID</th>
+            <th>Company Name</th>
+            <th>SalaryPackage</th>
+            <th>Work location</th>
+            <th>Criteria</th>
+            <th>Date Of Drive</th>
+            <th>Edit</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td>@item.Id</td>
+        <td>@item.CompanyName</td>
+        <td>@item.SalaryPackage</td>
+        <td>@item.Location</td>
+        <td>@item.CutoffPercentage</td>
+        <td>@item.DateOfDrive</td>
+        <td><button type="button">Edit</button></td>
+    </tr>
+                }
+            
+        </table>
+

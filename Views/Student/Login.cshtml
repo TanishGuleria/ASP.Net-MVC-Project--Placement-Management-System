@@ -1,0 +1,36 @@
+﻿@model PlacementManagement.Models.Login
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+   
+    <link href="~/Content/loginstyle.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div>
+        <center>
+            @using (Html.BeginForm("login", "Student"))
+            {
+
+                @Html.LabelFor(m => m.UserName)
+                <br>
+                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = "Username", @type = "text" })<br>
+                @Html.ValidationMessageFor(m => m.UserName);
+                <br>
+                @Html.LabelFor(m => m.Password)
+                <br>
+      
+                @Html.TextBoxFor(model => model.Password, new { @class = "form-control", placeholder = "Password", @type = "password" })<br>
+                @Html.ValidationMessageFor(m => m.Password);
+                <button type="submit" value="submit" id="submit" class="btn btn-primary" > Login</button>
+            }
+        </center>
+    </div>
+
+</body>
+</html>

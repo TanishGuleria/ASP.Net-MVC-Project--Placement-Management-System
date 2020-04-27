@@ -1,0 +1,38 @@
+﻿@model IEnumerable<PlacementManagement.Models.Companies>
+@{
+    ViewBag.Title = "Companies";
+    Layout = "~/Views/Shared/user.cshtml";
+}
+
+<h2>Companies</h2>
+
+<center>
+    <h2>Companies</h2>
+</center>
+
+<table class="table">
+    <tr>
+        <th>Company ID</th>
+        <th>Company Name</th>
+        <th>SalaryPackage</th>
+        <th>Work location</th>
+        <th>Criteria</th>
+        <th>Date Of Drive</th>
+        <th>Register
+        <th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.Id</td>
+    <td>@item.CompanyName</td>
+    <td>@item.SalaryPackage</td>
+    <td>@item.Location</td>
+    <td>@item.CutoffPercentage</td>
+    <td>@item.DateOfDrive</td>
+    <td><button type="button">Register</button></td>
+</tr>
+            }
+        
+    </table>

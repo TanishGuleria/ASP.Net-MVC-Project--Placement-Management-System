@@ -1,0 +1,53 @@
+﻿@model PlacementManagement.Models.Companies
+@{
+    ViewBag.Title = "AddCompany";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <center>
+        <h2>Add Company Details</h2>
+
+
+        @using (Html.BeginForm("AddCompany", "Admin"))
+        {
+            <div class="form-group">
+                @Html.LabelFor(m => m.CompanyName)
+                @Html.TextBoxFor(m => m.CompanyName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.CompanyName)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.SalaryPackage)
+                @Html.TextBoxFor(m => m.SalaryPackage, new { type = "number", @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.SalaryPackage)
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.DateOfDrive)
+                @Html.TextBoxFor(m => m.DateOfDrive, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.DateOfDrive)
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Location)
+                @Html.TextBoxFor(m => m.Location, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Location)
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.CutoffPercentage)
+                @Html.TextBoxFor(m => m.CutoffPercentage, new { type = "number", @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.CutoffPercentage)
+
+            </div>
+            <button type="submit" value="submit" class="btn btn-primary" style="        margin-top: 25px;
+        background-color: #222;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 25px;">Submit</button>
+
+        }
+    </center>
