@@ -29,7 +29,7 @@
             <th>Work location</th>
             <th>Criteria</th>
             <th>Date Of Drive</th>
-            <th>Edit</th>
+            
         </tr>
 
         @foreach (var item in Model)
@@ -41,9 +41,17 @@
         <td>@item.Location</td>
         <td>@item.CutoffPercentage</td>
         <td>@item.DateOfDrive</td>
-        <td><button type="button">Edit</button></td>
+        <td>@Html.ActionLink("Edit","EditCompany", new { id= item.Id}) | @Html.ActionLink("Delete", "DeleteCompany", new { id = item.Id })  </td>
     </tr>
                 }
             
         </table>
+@section scripts
+{
+    <script>
+        function deletefunction() {
+            confirm("areyou sure");
+        }
+    </script>
 
+    }

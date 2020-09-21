@@ -4,11 +4,15 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PlacementManagement.Models;
+using System.Data;
+using System.Data.Entity;
+using System.Data.Entity.Migrations;
 
 namespace PlacementManagement.Controllers
 {
     public class AdminController : Controller
     {
+        StudentContext context = new StudentContext();
         // GET: Admin
         public ActionResult Index()
         {
@@ -16,13 +20,13 @@ namespace PlacementManagement.Controllers
         }
         public ActionResult Slist()
         {
-            StudentContext context = new StudentContext();
+
 
             return View(context.Students.ToList());
         }
         public ActionResult Companies()
         {
-            StudentContext context = new StudentContext();
+
 
             return View(context.Companies.ToList());
         }
@@ -39,11 +43,41 @@ namespace PlacementManagement.Controllers
             }
             else
             {
-                StudentContext context = new StudentContext();
+
                 context.Companies.Add(c);
                 context.SaveChanges();
                 return RedirectToAction("Companies");
             }
+        }
+
+        public ActionResult DeleteStudent(int id)
+        {
+            Student s = context.Students.Find(id);
+            context.Students.Remove(s);
+            context.SaveChanges();
+            return RedirectToAction("Slist");
+
+        }
+
+        public ActionResult DeleteCompany(int id)
+        {
+            Companies c = context.Companies.Find(id);
+            context.Companies.Remove(c);
+            context.SaveChanges();
+            return RedirectToAction("Companies");
+        }
+        public ActionResult EditCompany(int id)
+        {
+            Companies c = context.Companies.Find(id);
+            return View(c);
+        }
+        [HttpPost]
+        public ActionResult EditCompany(Companies c)
+        {
+
+            context.Companies.AddOrUpdate(c);
+            context.SaveChanges();
+            return RedirectToAction("Companies");
         }
       
     }

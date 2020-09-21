@@ -17,15 +17,13 @@ namespace PlacementManagement.Models
 
         public string LastName { get; set; }
         [Required]
-
-
         public string FatherName { get; set; }
         [Required]
         public string BranchName { get; set; }
         [Required]
         public DateTime GraduationYear { get; set; }
         [Required]
-
+   
         public int Class10thMarks { get; set; }
         [Required]
         public int Class12thMarks { get; set; }
@@ -34,12 +32,5 @@ namespace PlacementManagement.Models
         public float CurrentCgpa { get; set; }
     }
 
-    public enum Branch
-    {
-      CSE,
-      ECE,
-      EEE,
-      MEC,
-      Civ
-    };
+   
 }

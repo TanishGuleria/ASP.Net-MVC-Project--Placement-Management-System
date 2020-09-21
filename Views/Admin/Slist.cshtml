@@ -20,7 +20,7 @@
         <th>10th %</th>
         <th>12th %</th>
         <th>Cgpa*</th>
-        <th>Edit</th>
+        
     </tr>
 
     @foreach (var item in Model)
@@ -36,7 +36,7 @@
     <td>@item.Class10thMarks</td>
     <td>@item.Class12thMarks</td>
     <td>@item.CurrentCgpa</td>
-    <td><button type="button">Edit</button></td>
+    <td>@Html.ActionLink("delete", "DeleteStudent",new { id=item.Id})</td>
 </tr>
             }
         

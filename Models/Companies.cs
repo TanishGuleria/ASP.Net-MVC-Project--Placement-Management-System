@@ -17,6 +17,7 @@ namespace PlacementManagement.Models
         [Required]
         public string Location { get; set; }
         [Required]
+        [Range(0,10)]
         public int CutoffPercentage { get; set; }
         [Required]
         public DateTime DateOfDrive { get; set; }
